@@ -1,7 +1,8 @@
 FROM jupyter/scipy-notebook
 FROM fedora:34
 
-RUN pip install joblib
+RUN yum -y install python3-pip
+    pip install joblib
 
 
 USER root
