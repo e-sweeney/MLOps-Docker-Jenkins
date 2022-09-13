@@ -6,7 +6,7 @@ RUN pip install joblib
 USER root
 RUN yum update && yum install -y jq
 
-sh mkdir model raw_data processed_data results
+RUN mkdir model raw_data processed_data results
 
 
 ENV RAW_DATA_DIR=/home/jovyan/raw_data
