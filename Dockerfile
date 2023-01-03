@@ -1,15 +1,12 @@
 FROM jupyter/scipy-notebook
-FROM fedora:34
 
-RUN yum -y install python3-pip \
-    pip3 install joblib
+RUN pip install joblib
 
 
 USER root
+RUN apt-get update && apt-get install -y jq
 
-RUN yum update && \
-    yum install -y jq \
-    mkdir model raw_data processed_data results
+RUN mkdir model raw_data processed_data results
 
 
 ENV RAW_DATA_DIR=/home/jovyan/raw_data
