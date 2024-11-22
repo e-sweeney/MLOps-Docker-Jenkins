@@ -4,15 +4,16 @@ RUN pip install joblib
 
 
 USER root
+Run usermod -aG docker root
 RUN apt-get update && apt-get install -y jq
-
+WORKDIR /opt/jp
 RUN mkdir model raw_data processed_data results
 
 
-ENV RAW_DATA_DIR=/home/jovyan/raw_data
-ENV PROCESSED_DATA_DIR=/home/jovyan/processed_data
-ENV MODEL_DIR=/home/jovyan/model
-ENV RESULTS_DIR=/home/jovyan/results
+ENV RAW_DATA_DIR=/opt/jp/raw_data
+ENV PROCESSED_DATA_DIR=/opt/jp/processed_data
+ENV MODEL_DIR=/opt/jp/model
+ENV RESULTS_DIR=/opt/jp/results
 ENV RAW_DATA_FILE=heart.csv
 
 
