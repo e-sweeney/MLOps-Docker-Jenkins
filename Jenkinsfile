@@ -13,6 +13,7 @@
           
         stage('Build & Run stage') {
               steps {
+                  script{ 
                     docker.build("heartdisease-model:latest", ".")
                     
                   }
