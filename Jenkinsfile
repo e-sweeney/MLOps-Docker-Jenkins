@@ -11,9 +11,10 @@
                  }
              }
           
-        stage('Test stage') {
+        stage('Build & Run stage') {
               steps {
-                    echo 'project is finishing'
+                    sh 'docker build -t heartdisease-model .'
+                    sh 'docker run -d --name model heartdisease-model'
                     
                   }
                }
