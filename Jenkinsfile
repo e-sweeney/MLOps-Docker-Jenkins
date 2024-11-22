@@ -13,9 +13,7 @@
           
         stage('Build & Run stage') {
               steps {
-                    sh 'sudo usermod -aG docker root'
-                    sh 'docker build -t heartdisease-model .'
-                    sh 'docker run -d --name model heartdisease-model'
+                    docker.build("heartdisease-model:latest", ".")
                     
                   }
                }
