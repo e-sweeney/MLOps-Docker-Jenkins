@@ -15,7 +15,7 @@
               steps {
                   script{ 
                     docker.build("heartdisease-model:latest", ".")
-                    
+                  }  
                   }
                }
     }
