@@ -26,6 +26,16 @@
                     docker.image("${img}").run('-d --name model')
                   }  
                   }
-        }    
+        } 
+        stage('Stop stage') {
+              steps {
+                  script{
+                   
+                    sh 'docker stop model'
+                    
+                  }
+              }
+        }
+
     }
 }
