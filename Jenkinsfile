@@ -23,7 +23,7 @@
               steps {
                   script{ 
                    img = "docker.io/library/heartdisease-model:latest"
-                    docker.img("${img}").run('-d --name model')
+                    docker.image("${img}").run('-d --name model')
                   }  
                   }
         }    
