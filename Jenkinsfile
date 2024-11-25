@@ -19,6 +19,13 @@
                   }
                }
        
-    
+        stage('Run stage') {
+              steps {
+                  script{ 
+                   img = "heartdisease-model:latest"
+                    docker.img("${img}").run('-d --name model')
+                  }  
+                  }
+        }    
     }
 }
