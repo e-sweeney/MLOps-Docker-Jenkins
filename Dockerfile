@@ -4,7 +4,7 @@ RUN pip install joblib
 
 
 USER root
-Run usermod -aG docker root
+
 RUN apt-get update && apt-get install -y jq
 WORKDIR /opt/jp
 RUN mkdir model raw_data processed_data results
