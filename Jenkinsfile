@@ -30,7 +30,9 @@
         stage('Stop stage') {
               steps {
                   script{
-                   
+                    sh 'docker exec model python3 preprocessing.py'
+                    sh 'docker exec model python3 train.py'
+                    sh 'docker exec model python3 test.py'
                     sh 'docker stop model'
                     
                   }
