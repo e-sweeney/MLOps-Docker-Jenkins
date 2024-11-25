@@ -18,35 +18,7 @@
                   }  
                   }
                }
-        stage('Run stage') {
-              steps {
-                  script{ 
-                   img = "heartdisease-model:latest"
-                    docker.img("${img}").run('-d --name model')
-                  }  
-                  }
-               }
-        stage('Preprocessing stage') {
-            steps {
-                script {
-                  sh 'docker exec model python3 preprocessing.py'
-                }
-               }
-           }
-        stage('Training stage') {
-            steps {
-                script{
-                    sh 'docker exec model python3 train.py'
-                }
-              }
-        }
-        stage('Test stage') {
-              steps {
-                  script{
-                   
-                    sh 'docker container exec model python3 test.py'
-                  }
-              }
-        }
+       
+    
     }
 }
